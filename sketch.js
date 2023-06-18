@@ -181,12 +181,8 @@ function draw() {
   if (modelReadyComplete) {
     if (currentScreen === "intro") {
       drawIntro();
-      bgm2.stop();
-      bgm1.loop();
     } else if (currentScreen === "mainScreen") {
       drawMainScreen();
-      bgm1.stop();
-      bgm2.loop();
     } else if (currentScreen === "ending") {
       drawEnding();
     } else if (currentScreen === "takePhotoPage") {
@@ -203,8 +199,12 @@ function keyPressed() {
   if (keyCode === 32) {
     if (currentScreen === "intro") {
       introMode = (introMode + 1) % 6;
+      bgm2.stop();
+      bgm1.loop();
       if (introMode === 0) {
         currentScreen = "mainScreen";
+        bgm1.stop();
+        bgm2.loop();
       }
     } else if (currentScreen === "mainScreen") {
       if (mainScreenMode !== 4) {
@@ -301,6 +301,9 @@ function reset() {
   tagDiv.html("");
   drawFaceMouseClicked = false;
   photoCheck = false;
+
+  bgm1.stop();
+  bgm2.stop();
 
   console.log("home");
 }
@@ -412,8 +415,8 @@ function drawMainScreen() {
 function drawEnding() {
   if (endingMode === 0) {
     if (capturedImage) {
-      image(capturedImage, width / 2, height / 2 - 50, 400, 400);
       image(endingImage, width / 2, height / 2, width, height);
+      image(capturedImage, width / 2, height / 2 - 50, 400, 400);
     }
   } else if (endingMode === 1) {
     background(0);
