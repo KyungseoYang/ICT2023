@@ -206,11 +206,12 @@ function keyPressed() {
       // endingMode = (endingMode + 1) % 2;
       if (endingMode === 0 && !firebaseUploaded) {
         uploadImageToFirebase();
-      } else if (endingMode === 1) {
-        tagDiv.html("");
-        currentScreen = "intro";
-        endingMode = 0;
       }
+      //   else if (endingMode === 1) {
+      //   tagDiv.html("");
+      //   currentScreen = "intro";
+      //   endingMode = 0;
+      // }
     } else if (photoCheck && currentScreen === "takePhotoPage") {
       console.log(currentScreen, photoCheck);
       takePhotoPageMode = (takePhotoPageMode + 1) % 2;
@@ -284,7 +285,7 @@ function reset() {
   drawFaceMouseClicked = false;
 
   firebaseUploaded = false;
-  tagDiv = "";
+  tagDiv.html("");
   drawFaceMouseClicked = false;
   photoCheck = false;
 
