@@ -28,6 +28,6 @@ body {
 #tagDiv{
   position: absolute;
   left: calc(50vw - 132.5px);
-  top: calc(50vh - 132.5px);
+  top: calc(50vh);
   
 }
