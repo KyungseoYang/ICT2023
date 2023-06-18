@@ -405,9 +405,9 @@ function drawMainScreen() {
   } else if (mainScreenMode === 4) {
     drawSelectFilterPage();
   } else if (mainScreenMode === 6) {
-    image(roomImage2, width / 2, height / 2, width, height);
     if (capturedImage) {
-      image(capturedImage, width / 2, 335, 95, 130);
+      image(capturedImage, width / 2, 330, 90, 135);
+    image(roomImage2, width / 2, height / 2, width, height);
     }
   }
 }
@@ -415,8 +415,8 @@ function drawMainScreen() {
 function drawEnding() {
   if (endingMode === 0) {
     if (capturedImage) {
+      image(capturedImage, width / 2, height / 2 - 50, 450, 450);
       image(endingImage, width / 2, height / 2, width, height);
-      image(capturedImage, width / 2, height / 2 - 50, 400, 400);
     }
   } else if (endingMode === 1) {
     background(0);
