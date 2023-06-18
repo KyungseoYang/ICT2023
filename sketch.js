@@ -170,8 +170,6 @@ function setup() {
   textAlign(CENTER, CENTER);
   fill(255);
   text("LOADING...", width / 2, height / 2);
-
-  noLoop();
 }
 
 function modelReady() {
@@ -372,8 +370,8 @@ function drawTakePhotoPage() {
 
 function drawIntro() {
   background(0);
-  music2.stop();
-  music1.loop();
+  bgm2.stop();
+  bgm1.play();
   // 인트로 모드에 따라 이미지 표시
   if (introMode === 0) {
     image(firstImage, width / 2, height / 2, width, height);
@@ -391,8 +389,8 @@ function drawIntro() {
 }
 
 function drawMainScreen() {
-  music1.stop();
-  music2.loop();
+  bgm1.stop();
+  bgm2.play();
   if (mainScreenMode === 0) {
     image(startImage, width / 2, height / 2, width, height);
   } else if (mainScreenMode === 1) {
