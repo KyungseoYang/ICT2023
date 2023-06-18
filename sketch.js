@@ -21,8 +21,7 @@ let firstImage,
   bgm1,
   bgm2,
   shutterSound,
-  startImage,
-  customFont;
+  startImage;
 
 let intro = true;
 let mainScreen = false;
@@ -119,12 +118,10 @@ function preload() {
   shutterSound = loadSound("assets/cameraShutter.mp3");
   bgm1 = loadSound("assets/music1.mp3");
   bgm2 = loadSound("assets/music2.mp3");
-  customFont = loadFont("asstets/HS봄바람체2.0.ttf");
 }
 
 function setup() {
   createCanvas(800, 800);
-  textFont(customFont);
   imageMode(CENTER);
   selectPhotoCanvas = createCanvas(800, 800);
   selectPhotoContext = selectPhotoCanvas.drawingContext;
