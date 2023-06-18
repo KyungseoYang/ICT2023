@@ -17,6 +17,7 @@ let firstImage,
   endingImage,
   QRImage,
   homeIcon,
+  shutterSound,
   startImage;
 
 let intro = true;
@@ -110,6 +111,7 @@ function preload() {
   suit = loadImage("assets/applesuit.png");
   img_taol = loadImage("assets/filter1.png");
   homeIcon = loadImage("assets/homebutton.png");
+  shutterSound = loadSound("assets/cameraShutter.mp3");
 }
 
 function setup() {
@@ -247,6 +249,7 @@ function mousePressed() {
     }
   } else if (currentScreen === "takePhotoPage" && !photoCheck) {
     // 캔버스 캡처하기
+    shutterSound.play();
     selectPhotoCanvas.elt.toBlob(function (blob) {
       url = URL.createObjectURL(blob);
       capturedImage = loadImage(url);
