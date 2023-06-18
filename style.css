@@ -18,3 +18,16 @@ body {
   padding: 0;
   background-color: black;
 }
+#sketchDiv{
+  width: 100vw;
+  height: 100vh;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+#tagDiv{
+  position: absolute;
+  left: calc(50vw - 132.5px);
+  top: calc(50vh - 132.5px);
+  
+}

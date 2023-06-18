@@ -156,7 +156,8 @@ function setup() {
   storage = firebase.storage();
 
   tagDiv = createDiv();
-  tagDiv.position(285, 400); //
+  tagDiv.id("tagDiv")
+  // tagDiv.position(285, 400); //
 
   textAlign(CENTER, CENTER);
   fill(255);
