@@ -181,8 +181,12 @@ function draw() {
   if (modelReadyComplete) {
     if (currentScreen === "intro") {
       drawIntro();
+      bgm2.stop();
+      bgm1.loop();
     } else if (currentScreen === "mainScreen") {
       drawMainScreen();
+      bgm1.stop();
+      bgm2.loop();
     } else if (currentScreen === "ending") {
       drawEnding();
     } else if (currentScreen === "takePhotoPage") {
@@ -370,8 +374,6 @@ function drawTakePhotoPage() {
 
 function drawIntro() {
   background(0);
-  bgm2.stop();
-  bgm1.play();
   // 인트로 모드에 따라 이미지 표시
   if (introMode === 0) {
     image(firstImage, width / 2, height / 2, width, height);
@@ -389,8 +391,6 @@ function drawIntro() {
 }
 
 function drawMainScreen() {
-  bgm1.stop();
-  bgm2.play();
   if (mainScreenMode === 0) {
     image(startImage, width / 2, height / 2, width, height);
   } else if (mainScreenMode === 1) {
