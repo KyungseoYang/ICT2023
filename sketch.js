@@ -15,8 +15,11 @@ let firstImage,
   roomImage1,
   roomImage2,
   endingImage,
+  noticeImage,
   QRImage,
   homeIcon,
+  bgm1,
+  bgm2,
   shutterSound,
   startImage;
 
@@ -104,6 +107,7 @@ function preload() {
   filterImage = loadImage("assets/filter.png");
   roomImage1 = loadImage("assets/room1.png");
   roomImage2 = loadImage("assets/room2.png");
+  noticeImage = loadImage("assets/notice.png");
   endingImage = loadImage("assets/ending.png");
   QRImage = loadImage("assets/qr.png");
   AP = loadImage("assets/appleapple.png");
@@ -112,6 +116,8 @@ function preload() {
   img_taol = loadImage("assets/filter1.png");
   homeIcon = loadImage("assets/homebutton.png");
   shutterSound = loadSound("assets/cameraShutter.mp3");
+  bgm1 = loadSound("assets/music1.mp3");
+  bgm2 = loadSound("assets/music2.mp3");
 }
 
 function setup() {
@@ -164,6 +170,8 @@ function setup() {
   textAlign(CENTER, CENTER);
   fill(255);
   text("LOADING...", width / 2, height / 2);
+
+  noLoop();
 }
 
 function modelReady() {
@@ -364,7 +372,8 @@ function drawTakePhotoPage() {
 
 function drawIntro() {
   background(0);
-
+  music2.stop();
+  music1.loop();
   // 인트로 모드에 따라 이미지 표시
   if (introMode === 0) {
     image(firstImage, width / 2, height / 2, width, height);
@@ -382,6 +391,8 @@ function drawIntro() {
 }
 
 function drawMainScreen() {
+  music1.stop();
+  music2.loop();
   if (mainScreenMode === 0) {
     image(startImage, width / 2, height / 2, width, height);
   } else if (mainScreenMode === 1) {
@@ -389,13 +400,7 @@ function drawMainScreen() {
   } else if (mainScreenMode === 2) {
     image(roomImage1, width / 2, height / 2, width, height);
   } else if (mainScreenMode === 3) {
-    rectMode(CENTER);
-    fill(255);
-    rect(width / 2, height / 2, width, height);
-    fill(0);
-    textAlign(CENTER);
-    textSize(50);
-    text("안내문", width / 2, height / 2);
+    image(noticeImage, width / 2, height / 2, width, height);
   } else if (mainScreenMode === 4) {
     drawSelectFilterPage();
   } else if (mainScreenMode === 6) {
