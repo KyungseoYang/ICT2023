@@ -96,7 +96,7 @@ let tagDiv;
 let firebaseUploaded = false;
 
 function preload() {
-  firstImage = loadImage("assets/first.png");
+  firstImage = loadImage("assets/firstt.png");
   storyImage1 = loadImage("assets/story1.png");
   storyImage2 = loadImage("assets/story2.png");
   storyImage3 = loadImage("assets/story3.png");
