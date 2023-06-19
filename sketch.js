@@ -297,6 +297,7 @@ function reset() {
   capturedImage = null;
   drawFaceMouseClicked = false;
 
+  modelReadyComplete = false;
   firebaseUploaded = false;
   tagDiv.html("");
   drawFaceMouseClicked = false;
