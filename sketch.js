@@ -115,6 +115,9 @@ function preload() {
   suit = loadImage("assets/applesuit.png");
   img_taol = loadImage("assets/filter1.png");
   homeIcon = loadImage("assets/homebutton.png");
+  photoTaken = loadImage("assets/takenn.png");
+  nextStep = loadImage("assets/nextlevel.png");
+  photoAgain = loadImage("assets/takeaa.png");
   shutterSound = loadSound("assets/cameraShutter.mp3");
   bgm1 = loadSound("assets/music1.mp3");
   bgm2 = loadSound("assets/music2.mp3");
@@ -268,7 +271,10 @@ function mousePressed() {
     fill(255);
     noStroke();
     textSize(25);
-    text("촬영된 사진을 확인하세요", width / 2, height / 2 - 200);
+    //text("촬영된 사진을 확인하세요", width / 2, height / 2 - 200);
+    image(photoAgain, width / 2 - 200, height / 2 + 300 ,280,70);
+    image(photoTaken, width / 2 , height / 2 -250, 280, 70);
+    image(nextStep, width /2+200, height /2 + 300, 280, 70 );
     photoCheck = true;
     firebaseUploaded = false;
   }
